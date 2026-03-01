@@ -67,8 +67,26 @@
     }
   </style>
 </head>
+  .stars {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(1px 1px at 10% 20%, #fff, transparent),
+    radial-gradient(1px 1px at 30% 80%, #fff, transparent),
+    radial-gradient(1px 1px at 70% 40%, #fff, transparent),
+    radial-gradient(1px 1px at 90% 60%, #fff, transparent);
+  animation: moveStars 60s linear infinite;
+  opacity: 0.25;
+  pointer-events: none;
+}
 
-<body>
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+  
+<div class="stars"></div>
+ <body>
   <div class="container">
     <div class="content">
       <h1>
