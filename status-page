@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Manutenção</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #0b1020, #02040f);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    a {
+      color: #ff8c42;
+      text-decoration: none;
+      font-weight: bold;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Os scripts retornam no início das aulas.</h1>
+    <p>Junte-se ao nosso servidor para obter as últimas notícias.</p>
+    <p>
+      <a href="https://discord.gg/platformdestroyer">
+        https://discord.gg/platformdestroyer
+      </a>
+    </p>
+  </div>
+</body>
+</html>
