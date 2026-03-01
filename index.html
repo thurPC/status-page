@@ -13,6 +13,25 @@
       background: radial-gradient(circle at top, #0c1230 0%, #050814 60%, #02040f 100%);
       font-family: Arial, Helvetica, sans-serif;
       color: #ffffff;
+      overflow: hidden;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(1px 1px at 10% 20%, #fff, transparent),
+        radial-gradient(1px 1px at 30% 80%, #fff, transparent),
+        radial-gradient(1px 1px at 70% 40%, #fff, transparent),
+        radial-gradient(1px 1px at 90% 60%, #fff, transparent);
+      opacity: 0.25;
+      animation: moveStars 60s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes moveStars {
+      from { transform: translateY(0); }
+      to { transform: translateY(-200px); }
     }
 
     .container {
@@ -21,24 +40,31 @@
       align-items: center;
       justify-content: center;
       padding: 24px;
-      text-align: left;
+      position: relative;
+      z-index: 1;
     }
 
     .content {
       max-width: 900px;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
-  font-size: 2.6rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin-bottom: 18px;
-      color: #dcdcdc;
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 24px;
     }
 
     a {
@@ -46,47 +72,46 @@
       font-size: 1.1rem;
       font-weight: 600;
       text-decoration: none;
-      word-break: break-all;
+      position: relative;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* estrelas sutis no fundo */
-    body::before {
+    a::after {
       content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.6), transparent),
-        radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,0.4), transparent),
-        radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.5), transparent),
-        radial-gradient(1px 1px at 80% 60%, rgba(255,255,255,0.3), transparent);
-      pointer-events: none;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: #ff8c42;
+      transition: width 0.3s ease;
     }
-  </style.stars {
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(1px 1px at 10% 20%, #fff, transparent),
-    radial-gradient(1px 1px at 30% 80%, #fff, transparent),
-    radial-gradient(1px 1px at 70% 40%, #fff, transparent),
-    radial-gradient(1px 1px at 90% 60%, #fff, transparent);
-  animation: moveStars 60s linear infinite;
-  opacity: 0.25;
-  pointer-events: none;
-}>
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .content {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-  
-<div class="stars"></div>
- <body>
+
+<body>
+  <div class="stars"></div>
+
   <div class="container">
     <div class="content">
       <h1>
-        Que triste... O script esta off por enquanto.
-         Mais relaxa que logo retornará!
-        enquanto isso da uma passada no nosso servidor para atualizações, é de graça!
+        Que triste... o script está off por enquanto.<br>
+        Mas relaxa que logo retornará!<br>
+        Enquanto isso, dá uma passada no nosso servidor para atualizações — é de graça!
       </h1>
 
       <a href="https://discord.gg/d4eJTDYVC">
